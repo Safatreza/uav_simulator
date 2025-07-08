@@ -1,0 +1,37 @@
+simulation:
+  dt: 0.1
+  sim_time: 20.0
+flight_model:
+  mass: 25.0
+  inertia: [1.2, 1.8, 2.0]
+  gravity: 9.81
+  aero:
+    mach: [0, 0.8, 1.0, 2.0]
+    CL:   [0.5, 0.4, 0.3, 0.2]
+    CD:   [0.05, 0.06, 0.12, 0.25]
+    CM:   [0.0, -0.02, -0.05, -0.1]
+    S: 1.0
+    c: 0.3
+    AR: 6.0
+    wave_drag_mach: 0.95
+    wave_drag_factor: 20.0
+    ctrl_eff_mach: 0.8
+    ctrl_eff_drop: 0.5
+propulsion_model:
+  max_thrust: 100.0
+  battery_capacity: 1000.0
+  peukert_exp: 1.05
+  max_temp: 60.0
+  thermal_rise: 0.01
+  # thrust_map: # Optional, for Mach/altitude-dependent thrust
+  #   throttle: [0, 1]
+  #   mach: [0, 1, 2]
+  #   altitude: [0, 10000]
+  #   thrust: [[0, 0, 0], [100, 80, 60]]
+controller:
+  kp: 0.05
+environment:
+  rho0: 1.225
+  h_scale: 8500
+sensors: {}
+mission: {} 
